@@ -5,10 +5,10 @@
  */
 package restaurantdeliverysystem;
 
-
 public abstract class Items {
-    private String name ;
-    protected Integer price; 
+
+    private String name;
+    protected Integer price;
     private String itemID;
 
     public Items(String name, Integer price, String itemID) {
@@ -16,8 +16,7 @@ public abstract class Items {
         this.setPrice(price);
         this.setItemID(itemID);
     }
-    
-      
+
     public String getName() {
         return name;
     }
@@ -41,6 +40,7 @@ public abstract class Items {
     public void setItemID(String itemID) {
         this.itemID = itemID;
     }
-       public abstract void display();
-    
+
+    public abstract void display();
+
 }

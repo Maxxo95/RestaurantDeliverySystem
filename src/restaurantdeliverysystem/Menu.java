@@ -7,12 +7,13 @@ import java.util.ArrayList;
  * @author Acer Nitro
  */
 public class Menu {
+
     private String name;
     private ArrayList<Items> menu;
 
     public Menu(String name, ArrayList<Items> menu) {
-        this.name = name;
-        this.menu = menu;
+        this.setName(name);
+        this.setMenu(menu);
     }
 
     public String getName() {
@@ -49,12 +50,14 @@ public class Menu {
             System.out.println("Index out of range.");
         }
     }
-    
+
     // Method to display the menu
     public void displayMenu() {
-       System.out.println("          "+ this.getName());
+        System.out.println("          " + this.getName());
+       int x = 0;
         for (Items item : menu) {
-            System.out.println(item.getName() + " - " + item.getPrice() + "$"); // Assuming Items class has a meaningful toString() method
+            x++;
+            System.out.println(x + ".- " + item.getName() + " - " + item.getPrice() + "$"); // Assuming Items class has a meaningful toString() method
         }
     }
 }
