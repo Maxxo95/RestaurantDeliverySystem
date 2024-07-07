@@ -5,10 +5,47 @@
  */
 package restaurantdeliverysystem;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Acer Nitro
  */
 public class Order {
+       private Double total ;
+      private String orderID;
+       private ArrayList<Items> itemsList;  
+    
+
+    public Order(Double total, ArrayList<Items> itemsList) {  //ArrayList<Items> itemsList
+        this.setTotal(total);
+        this.setItemsList(itemsList);
+        this.setOrderID(orderID);
+    }
      
+
+    public Double getTotal() {
+        return total;
+    }
+
+    public void setTotal(Double total) {
+        this.total = total;
+    }
+
+    public String getOrderID() {
+        return orderID;
+    }
+
+    public void setOrderID(String orderID) {
+        this.orderID = orderID;
+    }
+
+    public ArrayList<Items> getItemsList() {
+        return itemsList;
+    }
+
+    public void setItemsList(ArrayList<Items> itemsList) {
+        this.itemsList = itemsList;
+    }
+    
 }

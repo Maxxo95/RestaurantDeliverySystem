@@ -5,6 +5,8 @@
  */
 package restaurantdeliverysystem;
 
+import java.util.Scanner;
+
 /**
  *
  * @author Acer Nitro
@@ -13,8 +15,13 @@ public class Drinks extends Items {
 
     private String description;
 
-    public Drinks(String name, Integer price, String itemID, String description) {
+    public Drinks(String name, Double price, String itemID, String description) {
         super(name, price, itemID);
+        this.setDescription(description);
+    }
+
+    public Drinks() {
+
         this.setDescription(description);
     }
 
@@ -34,4 +41,39 @@ public class Drinks extends Items {
 
     }
 
+    public Items createItem() {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Enter the name of the item:");
+        String name = scanner.nextLine().trim();
+
+        while (name.isEmpty()) {
+            System.out.println("Name cannot be empty. Please enter the name of the item:");
+            name = scanner.nextLine().trim();
+        }
+
+        System.out.println("Enter the price of the item:");
+        double price = -1;
+        while (price < 0) {
+            String priceInput = scanner.nextLine().trim();
+            try {
+                price = Double.parseDouble(priceInput);
+                if (price < 0) {
+                    System.out.println("Price cannot be negative. Please enter a valid price:");
+                }
+            } catch (NumberFormatException e) {
+                System.out.println("Invalid input. Please enter a valid price:");
+            }
+        }
+
+        System.out.println("Enter the description of the item (optional):");
+        String description = scanner.nextLine().trim();
+
+        // Create the Food item
+        Drinks drinkItem = new Drinks(name, price, "ID", description);
+        //foodItem.display();
+
+        System.out.println("Item created successfully: ");
+        return drinkItem;
+    }
 }

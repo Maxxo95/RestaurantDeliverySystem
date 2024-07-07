@@ -8,10 +8,15 @@ package restaurantdeliverysystem;
 public abstract class Items {
 
     private String name;
-    protected Integer price;
+    protected Double price;
     private String itemID;
 
-    public Items(String name, Integer price, String itemID) {
+    public Items(String name, Double price, String itemID) {
+        this.setName(name);
+        this.setPrice(price);
+        this.setItemID(itemID);
+    }
+     public Items() {
         this.setName(name);
         this.setPrice(price);
         this.setItemID(itemID);
@@ -25,11 +30,11 @@ public abstract class Items {
         this.name = name;
     }
 
-    public Integer getPrice() {
+    public Double getPrice() {
         return price;
     }
 
-    public void setPrice(Integer price) {
+    public void setPrice(Double price) {
         this.price = price;
     }
 
@@ -42,5 +47,5 @@ public abstract class Items {
     }
 
     public abstract void display();
-
+    public abstract Items createItem();
 }

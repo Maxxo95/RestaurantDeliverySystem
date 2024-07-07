@@ -50,14 +50,16 @@ public class Menu {
             System.out.println("Index out of range.");
         }
     }
-
+    public Items getIndexAt(int n){
+      return  menu.get(n);
+    }
     // Method to display the menu
     public void displayMenu() {
         System.out.println("          " + this.getName());
        int x = 0;
         for (Items item : menu) {
             x++;
-            System.out.println(x + ".- " + item.getName() + " - " + item.getPrice() + "$"); // Assuming Items class has a meaningful toString() method
+            System.out.println(x + ".- " + item.getName() + " - " + item.getPrice() + "$"); 
         }
     }
 }
