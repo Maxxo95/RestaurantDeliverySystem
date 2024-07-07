@@ -17,7 +17,7 @@ public class ClientMenu {
     OrderCreator orderFood = new OrderCreator();
     
 
-    Order order;
+    Order order ;
 
     // orderFood.addToBasket(order, 11);
     
@@ -35,7 +35,7 @@ public class ClientMenu {
             System.out.println("2.- Comenzar orden");
             System.out.println("3.- Añadir a la order");
             System.out.println("4.- Mostrar orden");
-            System.out.println("5.- Eliminar orden");
+            System.out.println("5.- Modificar orden");
             System.out.println("0.- Salir");
 
             menuOption = scanner.nextLine().trim();
@@ -57,7 +57,20 @@ public class ClientMenu {
                     break;
                 case "3":
                     // Implement the functionality for adding to the order here
-                    System.out.println("Functionality for adding to the order is not yet implemented.");
+                       System.out.println("Añada el item que desea, uno a la vez");
+                    String indexOfMenuItem = scanner.nextLine().trim();
+                  if (order != null) {
+                          try {
+                        int itemNumber = Integer.parseInt(indexOfMenuItem);
+                        order =  orderFood.addToBasket(order,  itemNumber);
+                    } catch (NumberFormatException e) {
+                        System.out.println("Please enter a valid item number.");
+                    }
+                    } else {
+                        System.out.println("Comienze orden antes de añadir mas productos.");
+                    }
+                   
+                  
                     break;
                 case "4":
                     if (order != null) {
@@ -68,7 +81,7 @@ public class ClientMenu {
                     break;
                 case "5":
                     // Implement the functionality for deleting the order here
-                    System.out.println("Functionality for deleting the order is not yet implemented.");
+                    System.out.println("Functionality for modifiyin the order is not yet implemented.");
                     break;
                 case "0":
                     System.out.println("Saliendo del programa...");

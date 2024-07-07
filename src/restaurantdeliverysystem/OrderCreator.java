@@ -23,7 +23,7 @@ public class OrderCreator {
         
         
         
-        public Order createOrder(int n){
+        public Order createOrder(int n) {
            
            Integer itemIndex = n-1;
           displayMenu = menuCreator.testMenu();
