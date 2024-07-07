@@ -56,10 +56,9 @@ public class Menu {
     // Method to display the menu
     public void displayMenu() {
         System.out.println("          " + this.getName());
-       int x = 0;
-        for (Items item : menu) {
-            x++;
-            System.out.println(x + ".- " + item.getName() + " - " + item.getPrice() + "$"); 
+     
+        for (int i = 0 ; i < menu.size(); i++){
+             System.out.println(i+1 + ".- " + menu.get(i).getName() + " - " + menu.get(i).getPrice() + "$"); 
         }
     }
 }

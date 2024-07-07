@@ -48,4 +48,8 @@ public class Order {
         this.itemsList = itemsList;
     }
     
+    public Items getItemAtIndex(int n){
+      return  this.itemsList.get(n);
+    }
+    
 }

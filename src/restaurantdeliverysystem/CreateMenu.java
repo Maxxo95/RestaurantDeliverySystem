@@ -35,7 +35,8 @@ public class CreateMenu {
      private  ArrayList<Items> initialMenu = new ArrayList<>();
    
   public Menu testMenu(){
-     Menu myMenu = new Menu("Desayunos", initialMenu);   
+    initialMenu.clear();
+      Menu myMenu = new Menu("Desayunos", initialMenu);   
      myMenu.addItem(quesadilla);
     myMenu.addItem(tlacoyo);
      myMenu.addItem(gordita);

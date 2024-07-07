@@ -19,11 +19,12 @@ public class RestaurantDeliverySystem {
     public static void main(String[] args) {
        
       OrderCreator orderFood = new     OrderCreator();
-      orderFood.displayMenu();
+     //rderFood.displayMenu();
       
-      orderFood.createOrder(8);
-      
-      
-      
+     
+      Order order =   orderFood.createOrder(8);
+      orderFood.addToBasket(order, 11);
+       ClientMenu menu = new ClientMenu();   
+       menu.startMenu();
 }
 }
