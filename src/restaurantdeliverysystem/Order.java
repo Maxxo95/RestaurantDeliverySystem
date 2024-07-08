@@ -25,7 +25,12 @@ public class Order {
         this.setPaymentMethod(paymentMethod);
         this.setDomicilio(domicilio);
     }
-
+   public void restartOrder(){
+       this.setTotal(0.0);
+       this.getItemsList().clear();
+       
+       
+   }
     public String getDomicilio() {
         return domicilio;
     }
