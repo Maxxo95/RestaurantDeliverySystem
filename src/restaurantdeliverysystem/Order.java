@@ -15,15 +15,38 @@ public class Order {
        private Double total ;
       private String orderID;
        private ArrayList<Items> itemsList;  
-    
+    private PaymentMethod paymentMethod;
+      private   String domicilio;
 
     public Order(Double total, ArrayList<Items> itemsList) {  //ArrayList<Items> itemsList
         this.setTotal(total);
         this.setItemsList(itemsList);
         this.setOrderID(orderID);
+        this.setPaymentMethod(paymentMethod);
+        this.setDomicilio(domicilio);
+    }
+
+    public String getDomicilio() {
+        return domicilio;
+    }
+
+    public void setDomicilio(String domicilio) {
+        this.domicilio = domicilio;
     }
      
    
+    public void setPaymentMethod(PaymentMethod paymentMethod) {
+        this.paymentMethod = paymentMethod;
+    }
+
+    public boolean processOrder(Double totalAmount) {
+      
+        return paymentMethod.processPayment(totalAmount);
+    }
+
+    public String getPaymentDetails() {
+        return paymentMethod.getPaymentDetails();
+    }
 
     public Double getTotal() {
         return total;
